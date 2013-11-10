@@ -1,0 +1,19 @@
+name        "baggage-downloader"
+version     "0.1.0"
+description "Add your description"
+
+# We really want this ext so we can use it to test
+# bags as we install them. Remove it at your peril.
+
+ext bats https://github.com/sstephenson/bats.git
+
+# Add your bags here
+
+# From git
+# bag http://github.com/auser/baggage-ssh.git
+# Or from a local tar
+# bag /home/auser/baggage-web.tar.gz
+# Or from a local directory
+# bag /home/auser/baggage-fs
+# Or from a local directory in the baggage dir
+# bag my_baggage
