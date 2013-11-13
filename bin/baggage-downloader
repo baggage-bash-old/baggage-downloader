@@ -5,11 +5,10 @@ source_url="https://raw.github.com/baggage/baggage/master/out/baggage"
 out_file="$(mktemp /tmp/baggage-XXXXX)"
 dest_file="/usr/bin/baggage"
 
-echo ""
-echo "Downloading baggage from $source_url"
+echo " Downloading baggage from $source_url"
 curl "$source_url" > "$out_file"
 
-echo "Installing baggage file (may require sudo password)"
+echo " Installing baggage file (may require sudo password)"
 if [ "$UID" -eq "0" ]; then
   SUDO=""
 else
@@ -18,3 +17,17 @@ fi
 
 $SUDO mv "$out_file" "$dest_file"
 $SUDO chmod +x "$dest_file"
+
+echo "
+
+ Done :)
+
+ You have just installed baggage. You can now run
+
+ baggage new PROJECT
+
+ For more info, go to http://baggage.io
+
+"
+
+exit 0
