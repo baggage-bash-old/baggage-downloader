@@ -3,7 +3,7 @@ set -e
 
 source_url="https://raw.github.com/baggage/baggage/master/out/baggage"
 out_file="$(mktemp /tmp/baggage-XXXXX)"
-dest_file="/usr/local/bin/baggage"
+dest_file="/usr/bin/baggage"
 
 echo ""
 echo "Downloading baggage from $source_url"
