@@ -24,7 +24,7 @@ echo "
 
  You have just installed baggage. You can now run
 
- baggage new PROJECT
+     baggage new PROJECT
 
  For more info, go to http://baggage.io
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-# Built using http://baggage.io at Wed 13 Nov 2013 00:22:56 GMT
+# Built using http://baggage.io at Wed 13 Nov 2013 00:26:29 GMT
 set -e
 
 export BAGGAGE_APP_BUILT=1
@@ -38,7 +38,7 @@ echo "
 
  You have just installed baggage. You can now run
 
- baggage new PROJECT
+     baggage new PROJECT
 
  For more info, go to http://baggage.io
 
