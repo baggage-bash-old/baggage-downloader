@@ -5,7 +5,7 @@ description "Add your description"
 # We really want this ext so we can use it to test
 # bags as we install them. Remove it at your peril.
 
-ext bats https://github.com/sstephenson/bats.git
+#ext bats https://github.com/sstephenson/bats.git
 
 # Add your bags here
 

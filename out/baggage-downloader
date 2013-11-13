@@ -1,5 +1,5 @@
 #!/bin/bash
-# Built Sun 10 Nov 2013 07:31:36 GMT
+# Built using http://baggage.io at Tue 12 Nov 2013 22:30:58 GMT
 set -e
 
 export BAGGAGE_APP_BUILT=1
@@ -7,19 +7,6 @@ export BAGGAGE_APP_NAME="baggage-downloader"
 export BAGGAGE_APP_VERSION="0.1.0"
 export BAGGAGE_APP_DESCRIPTION="Add your description"
 
-http()
-{
-
-################################################################################
-# lib/http.bash
-################################################################################
-
-http_get()
-{
-  return
-}
-
-} # http
 
 ################################################################################
 # bin/baggage-downloader
@@ -28,4 +15,20 @@ http_get()
 #!/bin/bash
 set -e
 
-echo "hi"
+source_url="https://raw.github.com/baggage/baggage/master/out/baggage"
+out_file="$(mktemp /tmp/baggage-XXXXX)"
+dest_file="/usr/local/bin/baggage"
+
+echo ""
+echo "Downloading baggage from $source_url"
+curl "$source_url" > "$out_file"
+
+echo "Installing baggage file (may require sudo password)"
+if [ "$UID" -eq "0" ]; then
+  SUDO=""
+else
+  SUDO="sudo"
+fi
+
+$SUDO mv "$out_file" "$dest_file"
+$SUDO chmod +x "$dest_file"
